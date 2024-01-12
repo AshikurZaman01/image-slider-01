@@ -1,9 +1,26 @@
 import css from './style.css';
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
+import { useRef } from 'react';
 
 
 const Home = () => {
+
+    const slideRef = useRef(null);
+
+    const handlePrevClick = () => {
+        // Handle previous button click
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').prepend(items[items.length - 1]);
+        console.log('prev');
+    };
+
+    const handleNextClick = () => {
+        // Handle next button click
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').appendChild(items[0]);
+    };
+
     return (
         <div>
             <div className="container mx-auto">
@@ -87,8 +104,12 @@ const Home = () => {
                 </div>
 
                 <div className="buttons ">
-                    <button className='prev btn'><GrFormPrevious /></button>
-                    <button className='next btn'><MdOutlineNavigateNext /></button>
+                    <button className="prev btn" onClick={handlePrevClick}>
+                        <GrFormPrevious />
+                    </button>
+                    <button className="next btn" onClick={handleNextClick}>
+                        <MdOutlineNavigateNext />
+                    </button>
                 </div>
 
             </div>
