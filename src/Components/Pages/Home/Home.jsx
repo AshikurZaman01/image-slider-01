@@ -1,5 +1,7 @@
 import css from './style.css';
-import js from './app.js';
+import { MdOutlineNavigateNext } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
+
 
 const Home = () => {
     return (
@@ -85,8 +87,8 @@ const Home = () => {
                 </div>
 
                 <div className="buttons ">
-                    <button className='prev btn'>prev</button>
-                    <button className='next btn'>next</button>
+                    <button className='prev btn'><GrFormPrevious /></button>
+                    <button className='next btn'><MdOutlineNavigateNext /></button>
                 </div>
 
             </div>
